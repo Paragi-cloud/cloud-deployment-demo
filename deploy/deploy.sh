@@ -13,7 +13,7 @@ ssh -o StrictHostKeyChecking=no ubuntu@13.217.230.126 << 'EOF'
 
   # Build Docker images
   docker build -t fastapi-app backend
-  docker build -t react-app frontend
+  docker build -t react-app -f frontend/Dockerfile frontend
 
   # Stop and remove old containers
   docker stop fastapi-app || true && docker rm fastapi-app || true
