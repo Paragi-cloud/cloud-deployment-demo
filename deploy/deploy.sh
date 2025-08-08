@@ -13,7 +13,7 @@ docker tag react-app your_dockerhub_user/react-app
 # docker push your_dockerhub_user/react-app
 
 # SSH into EC2 and run containers
-ssh -o StrictHostKeyChecking=no ec2-user@your-ec2-ip << 'EOF'
+ssh -o StrictHostKeyChecking=no ubuntu@13.217.230.126 << 'EOF'
   docker stop fastapi-app || true && docker rm fastapi-app || true
   docker stop react-app || true && docker rm react-app || true
   docker pull your_dockerhub_user/fastapi-app
